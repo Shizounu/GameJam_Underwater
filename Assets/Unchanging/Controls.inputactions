@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "8b6bf229-8f5d-4c03-bba9-0d4256ad073f",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": ""
                 },
                 {
@@ -18,14 +18,6 @@
                     "type": "Button",
                     "id": "88d9b5c6-db1f-454c-a1c2-6e274f40f7b6",
                     "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "MousePos",
-                    "type": "Value",
-                    "id": "31d591f0-00b7-419b-9362-f58921ff07b6",
-                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }
@@ -94,17 +86,6 @@
                     "processors": "",
                     "groups": "Mouse and Keyboard",
                     "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2b38c617-f981-492c-89c5-1612abc82bd0",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse and Keyboard",
-                    "action": "MousePos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
