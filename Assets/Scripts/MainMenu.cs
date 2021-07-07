@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] string gameScene = "SampleScene";
+    [SerializeField] int gameScene = 1;
         
     public void PlayGame()
     {
