@@ -36,10 +36,6 @@ public class Player : MonoBehaviour
         {
             isMoving = false;
         };
-        playerControls.Player.Grab.performed += _ =>
-        {
-            Collect();
-        };
     }
 
     void Update()
@@ -62,23 +58,13 @@ public class Player : MonoBehaviour
         rb.AddForce(dir * speed);
     }
 
-    public void Collect()
-    {
-        Collectible collectible = GameManager.instance.collectible;
-        Debug.Log("Trying to collect");
-        if (this.CanSee(collectible, 1.5f))
-        {
-            collectible.gameObject.SetActive(false);
-            raisedEndFlag = true;
-            Debug.Log("Has Collected");
-        }
-    }
-
-
     void OnCollisionEnter2D(Collision2D other)
     {
-        health--;
-        Debug.Log("I hit something!");
+        if (other.gameObject != GameManager.instance.collectible.gameObject)
+        {
+            health--;
+            Debug.Log("I hit something!");
+        }
     }
     void OnBecameInvisible()
     {

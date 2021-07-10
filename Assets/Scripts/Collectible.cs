@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour{
-    public void OnCollect(){
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
         this.gameObject.SetActive(false);
+        GameManager.instance.player.raisedEndFlag = true;
     }
 }

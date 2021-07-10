@@ -13,10 +13,19 @@ public class CameraScroller : MonoBehaviour
     void LateUpdate()
     {
 
-        Vector3 camHeightPos = cameraPath[curFlag].endPos + new Vector3(0,0,-5);
+        Vector3 camHeightPos = cameraPath[curFlag].endPos + new Vector3(0, 0, -5);
         transform.position = Vector3.SmoothDamp(transform.position, camHeightPos, ref velocity, smoothTime, cameraPath[curFlag].Speed);
-        if (Vector3.Distance(transform.position, camHeightPos) < 0.1f)
-            curFlag++;
+
+
+        if (Vector3.Distance(transform.position, camHeightPos) < 0.1f){
+            if(GameManager.instance.player.raisedEndFlag){
+                curFlag--;
+            }else{
+                curFlag++;
+            }
+        }
+        
+
     }
 
     [Header("Path visualizaion")]
