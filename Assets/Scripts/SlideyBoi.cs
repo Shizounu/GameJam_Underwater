@@ -40,4 +40,14 @@ public class SlideyBoi : MonoBehaviour
             isGoingLeft = !isGoingLeft;
         }
     } 
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        if(isGoingLeft)
+            Gizmos.DrawLine(transform.position, transform.position + new Vector3(transform.position.x + distance,0,0));
+        else
+           Gizmos.DrawLine(transform.position, transform.position - new Vector3(transform.position.x + distance,0,0)); 
+    }
 }

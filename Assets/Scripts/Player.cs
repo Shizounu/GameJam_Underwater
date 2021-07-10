@@ -65,10 +65,12 @@ public class Player : MonoBehaviour
     public void Collect()
     {
         Collectible collectible = GameManager.instance.collectible;
+        Debug.Log("Trying to collect");
         if (this.CanSee(collectible, 1.5f))
         {
             collectible.gameObject.SetActive(false);
             raisedEndFlag = true;
+            Debug.Log("Has Collected");
         }
     }
 

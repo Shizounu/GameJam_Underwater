@@ -39,5 +39,14 @@ public class upyboi : MonoBehaviour
             swamDistance = 0f;
             isGoingUp = !isGoingUp;
         }
-    } 
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        if(isGoingUp)
+            Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, transform.position.x + distance, 0));
+        else
+           Gizmos.DrawLine(transform.position, transform.position - new Vector3(0, transform.position.x + distance, 0)); 
+    }
 }

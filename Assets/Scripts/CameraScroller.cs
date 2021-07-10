@@ -25,7 +25,7 @@ public class CameraScroller : MonoBehaviour
     {
         for (int i = 0; i < cameraPath.Count; i++)
         {
-            Gizmos.color = gradient.Evaluate(cameraPath[i].Speed / 10);
+            Gizmos.color = gradient.Evaluate(cameraPath[i].Speed / 5);
             if (i - 1 < 0)
                 Gizmos.DrawLine(startPos, cameraPath[i].endPos);
             else
